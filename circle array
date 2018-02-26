@@ -1,0 +1,33 @@
+var x = [];
+var y = [];
+var diameter = [];
+var color = [];
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(RGB)
+
+  for (var i = 0; i < 40; i++) {
+    x[i] = random(20, 380)
+    y[i] = random(20, 380);
+    diameter[i] = random(10, 150);
+    color[i] = color(random(), random(),random());
+  }
+}
+
+function draw() {
+  background(230);
+  stroke(15,23,200);
+  
+  
+  // ellipses
+  for (var i = 0; i + random(25); i++) {
+    fill(color[i]);
+    ellipse(x[i] +3, y[i] +3, diameter[i] +3);
+
+    
+    if (random() < 3) {
+      diameter[i] = random(3, 90);
+    }
+  }
+}
